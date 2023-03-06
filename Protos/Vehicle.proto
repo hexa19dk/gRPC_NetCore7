@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcNet7";
+
+service VehicleServiceGrpc {
+	rpc GetVehicleList (Empty) returns (VehicleResponse);
+	rpc GetVehicleById (VehicleRequestId) returns (VehicleList);
+	rpc CreateVehicle (VehicleList) returns (VehicleResponse);
+	rpc UpdateVehicle (VehicleRequestId) returns (VehicleResponse);
+	rpc DeleteVehicle (DeleteVehicleReq) returns (VehicleResponse);
+}
+
+message VehicleList {
+	int32 Id = 1;
+	string name = 2;
+	string type = 3;
+	string description = 4;
+	string number = 5;
+}
+
+message VehicleRequestId {
+	int32 id = 1;	
+}
+
+message VehicleResponse {
+	repeated VehicleList items = 1;
+}
+
+message DeleteVehicleReq {
+	bool isDelete = 1;
+}
+
+message Empty { }
