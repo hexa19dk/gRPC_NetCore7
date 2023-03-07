@@ -54,7 +54,7 @@ namespace GrpcNet7 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GrpcNet7.VehicleList> __Marshaller_VehicleList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.VehicleList.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcNet7.DeleteVehicleReq> __Marshaller_DeleteVehicleReq = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.DeleteVehicleReq.Parser));
+    static readonly grpc::Marshaller<global::GrpcNet7.RespMessage> __Marshaller_RespMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.RespMessage.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcNet7.Empty, global::GrpcNet7.VehicleResponse> __Method_GetVehicleList = new grpc::Method<global::GrpcNet7.Empty, global::GrpcNet7.VehicleResponse>(
@@ -73,28 +73,28 @@ namespace GrpcNet7 {
         __Marshaller_VehicleList);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcNet7.VehicleList, global::GrpcNet7.VehicleResponse> __Method_CreateVehicle = new grpc::Method<global::GrpcNet7.VehicleList, global::GrpcNet7.VehicleResponse>(
+    static readonly grpc::Method<global::GrpcNet7.VehicleList, global::GrpcNet7.RespMessage> __Method_CreateVehicle = new grpc::Method<global::GrpcNet7.VehicleList, global::GrpcNet7.RespMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "CreateVehicle",
         __Marshaller_VehicleList,
-        __Marshaller_VehicleResponse);
+        __Marshaller_RespMessage);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcNet7.VehicleRequestId, global::GrpcNet7.VehicleResponse> __Method_UpdateVehicle = new grpc::Method<global::GrpcNet7.VehicleRequestId, global::GrpcNet7.VehicleResponse>(
+    static readonly grpc::Method<global::GrpcNet7.VehicleList, global::GrpcNet7.RespMessage> __Method_UpdateVehicle = new grpc::Method<global::GrpcNet7.VehicleList, global::GrpcNet7.RespMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdateVehicle",
-        __Marshaller_VehicleRequestId,
-        __Marshaller_VehicleResponse);
+        __Marshaller_VehicleList,
+        __Marshaller_RespMessage);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcNet7.DeleteVehicleReq, global::GrpcNet7.VehicleResponse> __Method_DeleteVehicle = new grpc::Method<global::GrpcNet7.DeleteVehicleReq, global::GrpcNet7.VehicleResponse>(
+    static readonly grpc::Method<global::GrpcNet7.VehicleRequestId, global::GrpcNet7.RespMessage> __Method_DeleteVehicle = new grpc::Method<global::GrpcNet7.VehicleRequestId, global::GrpcNet7.RespMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "DeleteVehicle",
-        __Marshaller_DeleteVehicleReq,
-        __Marshaller_VehicleResponse);
+        __Marshaller_VehicleRequestId,
+        __Marshaller_RespMessage);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -119,19 +119,19 @@ namespace GrpcNet7 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.VehicleResponse> CreateVehicle(global::GrpcNet7.VehicleList request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.RespMessage> CreateVehicle(global::GrpcNet7.VehicleList request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.VehicleResponse> UpdateVehicle(global::GrpcNet7.VehicleRequestId request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.RespMessage> UpdateVehicle(global::GrpcNet7.VehicleList request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.VehicleResponse> DeleteVehicle(global::GrpcNet7.DeleteVehicleReq request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.RespMessage> DeleteVehicle(global::GrpcNet7.VehicleRequestId request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -160,9 +160,9 @@ namespace GrpcNet7 {
     {
       serviceBinder.AddMethod(__Method_GetVehicleList, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.Empty, global::GrpcNet7.VehicleResponse>(serviceImpl.GetVehicleList));
       serviceBinder.AddMethod(__Method_GetVehicleById, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.VehicleRequestId, global::GrpcNet7.VehicleList>(serviceImpl.GetVehicleById));
-      serviceBinder.AddMethod(__Method_CreateVehicle, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.VehicleList, global::GrpcNet7.VehicleResponse>(serviceImpl.CreateVehicle));
-      serviceBinder.AddMethod(__Method_UpdateVehicle, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.VehicleRequestId, global::GrpcNet7.VehicleResponse>(serviceImpl.UpdateVehicle));
-      serviceBinder.AddMethod(__Method_DeleteVehicle, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.DeleteVehicleReq, global::GrpcNet7.VehicleResponse>(serviceImpl.DeleteVehicle));
+      serviceBinder.AddMethod(__Method_CreateVehicle, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.VehicleList, global::GrpcNet7.RespMessage>(serviceImpl.CreateVehicle));
+      serviceBinder.AddMethod(__Method_UpdateVehicle, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.VehicleList, global::GrpcNet7.RespMessage>(serviceImpl.UpdateVehicle));
+      serviceBinder.AddMethod(__Method_DeleteVehicle, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.VehicleRequestId, global::GrpcNet7.RespMessage>(serviceImpl.DeleteVehicle));
     }
 
   }

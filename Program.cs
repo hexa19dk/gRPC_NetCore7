@@ -1,5 +1,5 @@
-using GrpcNet7.Data;
 using GrpcNet7.Services;
+using GrpcNet7.Data;
 using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
