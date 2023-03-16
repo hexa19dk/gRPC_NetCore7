@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcNet7";
+
+service TransactionServiceGrpc {
+	rpc GetAllTrans (ReqEmpty) returns (TransResponse);
+	rpc GetByIdTrans (TransId) returns (TransactionModel);
+	rpc CreateTransaction (TransactionModel) returns (ResponseMessage);
+	rpc UpdateTransaction(TransactionModel) returns (ResponseMessage);
+	rpc DeleteTransaction(TransId) returns (ResponseMessage);
+}
+
+message TransactionModel {
+	int32 Id = 1;
+	string RentalNumber = 2;
+	string TransDate = 3;
+	string Destination = 4;
+	double Price = 5;
+	string StartDate = 6;
+	string EndDate = 7;
+	string WarrantyType = 8;
+	int32 UserId = 9;
+	int32 VehicleId = 10;
+}
+
+message TransId {
+	int32 id = 1;
+}
+
+message TransResponse {
+	repeated TransactionModel items = 1;
+}
+
+message ReqEmpty { }
+
+message ResponseMessage {
+	string code = 1;
+	string desc = 2;
+}

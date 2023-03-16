@@ -19,15 +19,18 @@
 
   <ItemGroup>
     <None Remove="Protos\greet.proto" />
+    <None Remove="Protos\Transaction.proto" />
     <None Remove="Protos\Vehicle.proto" />
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protos\Transaction.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\Vehicle.proto" GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
     <PackageReference Include="Grpc.Tools" Version="2.51.0">
       <PrivateAssets>all</PrivateAssets>
@@ -42,6 +45,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.3" />
     <PackageReference Include="MySqlConnector" Version="2.2.5" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />

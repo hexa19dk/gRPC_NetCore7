@@ -1,5 +1,5 @@
-using GrpcNet7.Services;
 using GrpcNet7.Data;
+using GrpcNet7.Services;
 using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,10 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddGrpc();
 builder.Services.AddDbContext<DataContext>();
+builder.Services.AddScoped<DapperContext>();
 
-builder.Services.AddTransient<MySqlConnection>(_ =>
-    new MySqlConnection(builder.Configuration.GetConnectionString("connDef")));
+builder.Services.AddTransient<MySqlConnection>(_ => new MySqlConnection(builder.Configuration.GetConnectionString("connDef")));
 builder.Services.AddTransient<DataSeed>();
+
+builder.Services.AddStackExchangeRedisCache(options => { options.Configuration = builder.Configuration.GetConnectionString("RedisCacheUrl"); });
+builder.Services.AddScoped<ICacheService, CacheService>();
 
 var app = builder.Build();
 
@@ -36,6 +39,7 @@ void SeedData(IHost app)
 // Configure the HTTP request pipeline.
 //app.MapGrpcService<GreeterService>();
 app.MapGrpcService<VehicleService>();
+app.MapGrpcService<TransactionService>();
 
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 

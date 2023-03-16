@@ -9,5 +9,7 @@ namespace GrpcNet7.Entities
         public string Type { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Number { get; set; } = string.Empty;
+
+        public ICollection<Transaction>? Transactions { get; set; }
     }
 }

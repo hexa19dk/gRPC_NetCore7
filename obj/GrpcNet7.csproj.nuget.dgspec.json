@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
             "Grpc.AspNetCore": {
               "target": "Package",
               "version": "[2.49.0, )"
@@ -72,6 +76,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[7.0.3, )"
             },
