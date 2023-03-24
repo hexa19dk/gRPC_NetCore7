@@ -8,9 +8,17 @@
 using grpc = global::Grpc.Core;
 
 namespace GrpcNet7 {
+  /// <summary>
+  ///rpc GetAllTrans (ReqEmpty) returns (TransResponse);
+  ///rpc GetByIdTrans (TransId) returns (TransResponse);
+  ///rpc CreateTransaction (TransactionModel) returns (ResponseMessage);
+  ///rpc UpdateTransaction(TransactionModel) returns (ResponseMessage);
+  ///rpc DeleteTransaction(TransId) returns (ResponseMessage);
+  ///rpc GetTransUser(TransId) returns (TransResponse);
+  /// </summary>
   public static partial class TransactionServiceGrpc
   {
-    static readonly string __ServiceName = "TransactionServiceGrpc";
+    static readonly string __ServiceName = "transaction.TransactionServiceGrpc";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -46,55 +54,63 @@ namespace GrpcNet7 {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcNet7.ReqEmpty> __Marshaller_ReqEmpty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.ReqEmpty.Parser));
+    static readonly grpc::Marshaller<global::GrpcNet7.ReqEmpty> __Marshaller_transaction_ReqEmpty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.ReqEmpty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcNet7.TransResponse> __Marshaller_TransResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.TransResponse.Parser));
+    static readonly grpc::Marshaller<global::GrpcNet7.TransResponse> __Marshaller_transaction_TransResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.TransResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcNet7.TransId> __Marshaller_TransId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.TransId.Parser));
+    static readonly grpc::Marshaller<global::GrpcNet7.TransId> __Marshaller_transaction_TransId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.TransId.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcNet7.TransactionModel> __Marshaller_TransactionModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.TransactionModel.Parser));
+    static readonly grpc::Marshaller<global::GrpcNet7.TransactionModel> __Marshaller_transaction_TransactionModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.TransactionModel.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcNet7.ResponseMessage> __Marshaller_ResponseMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.ResponseMessage.Parser));
+    static readonly grpc::Marshaller<global::GrpcNet7.ResponseMessage> __Marshaller_transaction_ResponseMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcNet7.ResponseMessage.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcNet7.ReqEmpty, global::GrpcNet7.TransResponse> __Method_GetAllTrans = new grpc::Method<global::GrpcNet7.ReqEmpty, global::GrpcNet7.TransResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetAllTrans",
-        __Marshaller_ReqEmpty,
-        __Marshaller_TransResponse);
+        __Marshaller_transaction_ReqEmpty,
+        __Marshaller_transaction_TransResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcNet7.TransId, global::GrpcNet7.TransactionModel> __Method_GetByIdTrans = new grpc::Method<global::GrpcNet7.TransId, global::GrpcNet7.TransactionModel>(
+    static readonly grpc::Method<global::GrpcNet7.TransId, global::GrpcNet7.TransResponse> __Method_GetByIdTrans = new grpc::Method<global::GrpcNet7.TransId, global::GrpcNet7.TransResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetByIdTrans",
-        __Marshaller_TransId,
-        __Marshaller_TransactionModel);
+        __Marshaller_transaction_TransId,
+        __Marshaller_transaction_TransResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcNet7.TransactionModel, global::GrpcNet7.ResponseMessage> __Method_CreateTransaction = new grpc::Method<global::GrpcNet7.TransactionModel, global::GrpcNet7.ResponseMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "CreateTransaction",
-        __Marshaller_TransactionModel,
-        __Marshaller_ResponseMessage);
+        __Marshaller_transaction_TransactionModel,
+        __Marshaller_transaction_ResponseMessage);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcNet7.TransactionModel, global::GrpcNet7.ResponseMessage> __Method_UpdateTransaction = new grpc::Method<global::GrpcNet7.TransactionModel, global::GrpcNet7.ResponseMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdateTransaction",
-        __Marshaller_TransactionModel,
-        __Marshaller_ResponseMessage);
+        __Marshaller_transaction_TransactionModel,
+        __Marshaller_transaction_ResponseMessage);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcNet7.TransId, global::GrpcNet7.ResponseMessage> __Method_DeleteTransaction = new grpc::Method<global::GrpcNet7.TransId, global::GrpcNet7.ResponseMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "DeleteTransaction",
-        __Marshaller_TransId,
-        __Marshaller_ResponseMessage);
+        __Marshaller_transaction_TransId,
+        __Marshaller_transaction_ResponseMessage);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::GrpcNet7.TransId, global::GrpcNet7.TransResponse> __Method_GetTransUserCar = new grpc::Method<global::GrpcNet7.TransId, global::GrpcNet7.TransResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetTransUserCar",
+        __Marshaller_transaction_TransId,
+        __Marshaller_transaction_TransResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -113,7 +129,7 @@ namespace GrpcNet7 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.TransactionModel> GetByIdTrans(global::GrpcNet7.TransId request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.TransResponse> GetByIdTrans(global::GrpcNet7.TransId request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -136,6 +152,12 @@ namespace GrpcNet7 {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::GrpcNet7.TransResponse> GetTransUserCar(global::GrpcNet7.TransId request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -148,7 +170,8 @@ namespace GrpcNet7 {
           .AddMethod(__Method_GetByIdTrans, serviceImpl.GetByIdTrans)
           .AddMethod(__Method_CreateTransaction, serviceImpl.CreateTransaction)
           .AddMethod(__Method_UpdateTransaction, serviceImpl.UpdateTransaction)
-          .AddMethod(__Method_DeleteTransaction, serviceImpl.DeleteTransaction).Build();
+          .AddMethod(__Method_DeleteTransaction, serviceImpl.DeleteTransaction)
+          .AddMethod(__Method_GetTransUserCar, serviceImpl.GetTransUserCar).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -159,10 +182,11 @@ namespace GrpcNet7 {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, TransactionServiceGrpcBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetAllTrans, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.ReqEmpty, global::GrpcNet7.TransResponse>(serviceImpl.GetAllTrans));
-      serviceBinder.AddMethod(__Method_GetByIdTrans, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.TransId, global::GrpcNet7.TransactionModel>(serviceImpl.GetByIdTrans));
+      serviceBinder.AddMethod(__Method_GetByIdTrans, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.TransId, global::GrpcNet7.TransResponse>(serviceImpl.GetByIdTrans));
       serviceBinder.AddMethod(__Method_CreateTransaction, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.TransactionModel, global::GrpcNet7.ResponseMessage>(serviceImpl.CreateTransaction));
       serviceBinder.AddMethod(__Method_UpdateTransaction, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.TransactionModel, global::GrpcNet7.ResponseMessage>(serviceImpl.UpdateTransaction));
       serviceBinder.AddMethod(__Method_DeleteTransaction, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.TransId, global::GrpcNet7.ResponseMessage>(serviceImpl.DeleteTransaction));
+      serviceBinder.AddMethod(__Method_GetTransUserCar, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcNet7.TransId, global::GrpcNet7.TransResponse>(serviceImpl.GetTransUserCar));
     }
 
   }

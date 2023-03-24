@@ -1,2 +1,6 @@
 obj\Debug\net7.0\Protos/Transaction.cs \
-obj\Debug\net7.0\Protos/TransactionGrpc.cs: Protos/Transaction.proto
+obj\Debug\net7.0\Protos/TransactionGrpc.cs: google/api/http.proto\
+ C:/Users/puntodewo.fadhillah/.nuget/packages/grpc.tools/2.52.0/build/native/include/google/protobuf/descriptor.proto\
+ google/api/annotations.proto\
+ Protos/Vehicle.proto\
+ Protos/Transaction.proto

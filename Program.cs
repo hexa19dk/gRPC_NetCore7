@@ -1,5 +1,6 @@
 using GrpcNet7.Data;
 using GrpcNet7.Services;
+using Microsoft.OpenApi.Models;
 using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
+builder.Services.AddGrpc().AddJsonTranscoding();
+
+builder.Services.AddGrpcSwagger();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "gRPC Transcoding", Version = "v1" });
+});
+
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddScoped<DapperContext>();
 
@@ -18,12 +27,13 @@ builder.Services.AddTransient<DataSeed>();
 builder.Services.AddStackExchangeRedisCache(options => { options.Configuration = builder.Configuration.GetConnectionString("RedisCacheUrl"); });
 builder.Services.AddScoped<ICacheService, CacheService>();
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 //Data Seed 
 if (args.Length == 1 && args[0].ToLower() == "seeddata")
     SeedData(app);
-
 void SeedData(IHost app)
 {
     var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
@@ -35,6 +45,11 @@ void SeedData(IHost app)
     }
 }
 
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vehicle API");
+});
 
 // Configure the HTTP request pipeline.
 //app.MapGrpcService<GreeterService>();

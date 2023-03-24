@@ -2,12 +2,55 @@ syntax = "proto3";
 
 option csharp_namespace = "GrpcNet7";
 
+package transaction;
+
+import "google/api/http.proto";
+import "google/api/annotations.proto";
+import "Protos/Vehicle.proto";
+
 service TransactionServiceGrpc {
-	rpc GetAllTrans (ReqEmpty) returns (TransResponse);
-	rpc GetByIdTrans (TransId) returns (TransactionModel);
-	rpc CreateTransaction (TransactionModel) returns (ResponseMessage);
-	rpc UpdateTransaction(TransactionModel) returns (ResponseMessage);
-	rpc DeleteTransaction(TransId) returns (ResponseMessage);
+	//rpc GetAllTrans (ReqEmpty) returns (TransResponse);
+	//rpc GetByIdTrans (TransId) returns (TransResponse);
+	//rpc CreateTransaction (TransactionModel) returns (ResponseMessage);
+	//rpc UpdateTransaction(TransactionModel) returns (ResponseMessage);
+	//rpc DeleteTransaction(TransId) returns (ResponseMessage);
+	//rpc GetTransUser(TransId) returns (TransResponse);
+
+	rpc GetAllTrans(ReqEmpty) returns (TransResponse) {
+		option (google.api.http) = {
+			get: "/v1/transaction"
+		};
+	}
+
+	rpc GetByIdTrans (TransId) returns (TransResponse) {
+		option (google.api.http) = {
+			get: "/v1/transaction/{id}"
+		};
+	}
+
+	rpc CreateTransaction (TransactionModel) returns (ResponseMessage) {
+		option (google.api.http) = {
+			get: "/v1/transaction/create"
+		};
+	}
+
+	rpc UpdateTransaction (TransactionModel) returns (ResponseMessage) {
+		option (google.api.http) = {
+			get: "/v1/transaction/update"
+		};
+	}
+
+	rpc DeleteTransaction (TransId) returns (ResponseMessage) {
+		option (google.api.http) = {
+			get: "/v1/transaction/delete/{id}"
+		};
+	}
+
+	rpc GetTransUserCar (TransId) returns (TransResponse) {
+		option (google.api.http) = {
+			get: "/v1/transaction/relation/{id}"
+		};
+	}
 }
 
 message TransactionModel {
@@ -17,10 +60,11 @@ message TransactionModel {
 	string Destination = 4;
 	double Price = 5;
 	string StartDate = 6;
-	string EndDate = 7;
+	string EndDate= 7;
 	string WarrantyType = 8;
 	int32 UserId = 9;
 	int32 VehicleId = 10;
+	VehicleList VehicleList = 11;
 }
 
 message TransId {

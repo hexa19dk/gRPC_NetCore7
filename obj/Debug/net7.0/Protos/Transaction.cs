@@ -24,25 +24,37 @@ namespace GrpcNet7 {
     static TransactionReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQcm90b3MvVHJhbnNhY3Rpb24ucHJvdG8iyAEKEFRyYW5zYWN0aW9uTW9k",
-            "ZWwSCgoCSWQYASABKAUSFAoMUmVudGFsTnVtYmVyGAIgASgJEhEKCVRyYW5z",
-            "RGF0ZRgDIAEoCRITCgtEZXN0aW5hdGlvbhgEIAEoCRINCgVQcmljZRgFIAEo",
-            "ARIRCglTdGFydERhdGUYBiABKAkSDwoHRW5kRGF0ZRgHIAEoCRIUCgxXYXJy",
-            "YW50eVR5cGUYCCABKAkSDgoGVXNlcklkGAkgASgFEhEKCVZlaGljbGVJZBgK",
-            "IAEoBSIVCgdUcmFuc0lkEgoKAmlkGAEgASgFIjEKDVRyYW5zUmVzcG9uc2US",
-            "IAoFaXRlbXMYASADKAsyES5UcmFuc2FjdGlvbk1vZGVsIgoKCFJlcUVtcHR5",
+            "ChhQcm90b3MvVHJhbnNhY3Rpb24ucHJvdG8SC3RyYW5zYWN0aW9uGhVnb29n",
+            "bGUvYXBpL2h0dHAucHJvdG8aHGdvb2dsZS9hcGkvYW5ub3RhdGlvbnMucHJv",
+            "dG8aFFByb3Rvcy9WZWhpY2xlLnByb3RvIusBChBUcmFuc2FjdGlvbk1vZGVs",
+            "EgoKAklkGAEgASgFEhQKDFJlbnRhbE51bWJlchgCIAEoCRIRCglUcmFuc0Rh",
+            "dGUYAyABKAkSEwoLRGVzdGluYXRpb24YBCABKAkSDQoFUHJpY2UYBSABKAES",
+            "EQoJU3RhcnREYXRlGAYgASgJEg8KB0VuZERhdGUYByABKAkSFAoMV2FycmFu",
+            "dHlUeXBlGAggASgJEg4KBlVzZXJJZBgJIAEoBRIRCglWZWhpY2xlSWQYCiAB",
+            "KAUSIQoLVmVoaWNsZUxpc3QYCyABKAsyDC5WZWhpY2xlTGlzdCIVCgdUcmFu",
+            "c0lkEgoKAmlkGAEgASgFIj0KDVRyYW5zUmVzcG9uc2USLAoFaXRlbXMYASAD",
+            "KAsyHS50cmFuc2FjdGlvbi5UcmFuc2FjdGlvbk1vZGVsIgoKCFJlcUVtcHR5",
             "Ii0KD1Jlc3BvbnNlTWVzc2FnZRIMCgRjb2RlGAEgASgJEgwKBGRlc2MYAiAB",
-            "KAkylAIKFlRyYW5zYWN0aW9uU2VydmljZUdycGMSKAoLR2V0QWxsVHJhbnMS",
-            "CS5SZXFFbXB0eRoOLlRyYW5zUmVzcG9uc2USKwoMR2V0QnlJZFRyYW5zEggu",
-            "VHJhbnNJZBoRLlRyYW5zYWN0aW9uTW9kZWwSOAoRQ3JlYXRlVHJhbnNhY3Rp",
-            "b24SES5UcmFuc2FjdGlvbk1vZGVsGhAuUmVzcG9uc2VNZXNzYWdlEjgKEVVw",
-            "ZGF0ZVRyYW5zYWN0aW9uEhEuVHJhbnNhY3Rpb25Nb2RlbBoQLlJlc3BvbnNl",
-            "TWVzc2FnZRIvChFEZWxldGVUcmFuc2FjdGlvbhIILlRyYW5zSWQaEC5SZXNw",
-            "b25zZU1lc3NhZ2VCC6oCCEdycGNOZXQ3YgZwcm90bzM="));
+            "KAkykQUKFlRyYW5zYWN0aW9uU2VydmljZUdycGMSWQoLR2V0QWxsVHJhbnMS",
+            "FS50cmFuc2FjdGlvbi5SZXFFbXB0eRoaLnRyYW5zYWN0aW9uLlRyYW5zUmVz",
+            "cG9uc2UiF4LT5JMCERIPL3YxL3RyYW5zYWN0aW9uEl4KDEdldEJ5SWRUcmFu",
+            "cxIULnRyYW5zYWN0aW9uLlRyYW5zSWQaGi50cmFuc2FjdGlvbi5UcmFuc1Jl",
+            "c3BvbnNlIhyC0+STAhYSFC92MS90cmFuc2FjdGlvbi97aWR9EnAKEUNyZWF0",
+            "ZVRyYW5zYWN0aW9uEh0udHJhbnNhY3Rpb24uVHJhbnNhY3Rpb25Nb2RlbBoc",
+            "LnRyYW5zYWN0aW9uLlJlc3BvbnNlTWVzc2FnZSIegtPkkwIYEhYvdjEvdHJh",
+            "bnNhY3Rpb24vY3JlYXRlEnAKEVVwZGF0ZVRyYW5zYWN0aW9uEh0udHJhbnNh",
+            "Y3Rpb24uVHJhbnNhY3Rpb25Nb2RlbBocLnRyYW5zYWN0aW9uLlJlc3BvbnNl",
+            "TWVzc2FnZSIegtPkkwIYEhYvdjEvdHJhbnNhY3Rpb24vdXBkYXRlEmwKEURl",
+            "bGV0ZVRyYW5zYWN0aW9uEhQudHJhbnNhY3Rpb24uVHJhbnNJZBocLnRyYW5z",
+            "YWN0aW9uLlJlc3BvbnNlTWVzc2FnZSIjgtPkkwIdEhsvdjEvdHJhbnNhY3Rp",
+            "b24vZGVsZXRlL3tpZH0SagoPR2V0VHJhbnNVc2VyQ2FyEhQudHJhbnNhY3Rp",
+            "b24uVHJhbnNJZBoaLnRyYW5zYWN0aW9uLlRyYW5zUmVzcG9uc2UiJYLT5JMC",
+            "HxIdL3YxL3RyYW5zYWN0aW9uL3JlbGF0aW9uL3tpZH1CC6oCCEdycGNOZXQ3",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Api.HttpReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, global::GrpcNet7.VehicleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcNet7.TransactionModel), global::GrpcNet7.TransactionModel.Parser, new[]{ "Id", "RentalNumber", "TransDate", "Destination", "Price", "StartDate", "EndDate", "WarrantyType", "UserId", "VehicleId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcNet7.TransactionModel), global::GrpcNet7.TransactionModel.Parser, new[]{ "Id", "RentalNumber", "TransDate", "Destination", "Price", "StartDate", "EndDate", "WarrantyType", "UserId", "VehicleId", "VehicleList" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcNet7.TransId), global::GrpcNet7.TransId.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcNet7.TransResponse), global::GrpcNet7.TransResponse.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcNet7.ReqEmpty), global::GrpcNet7.ReqEmpty.Parser, null, null, null, null, null),
@@ -97,6 +109,7 @@ namespace GrpcNet7 {
       warrantyType_ = other.warrantyType_;
       userId_ = other.userId_;
       vehicleId_ = other.vehicleId_;
+      vehicleList_ = other.vehicleList_ != null ? other.vehicleList_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -226,6 +239,18 @@ namespace GrpcNet7 {
       }
     }
 
+    /// <summary>Field number for the "VehicleList" field.</summary>
+    public const int VehicleListFieldNumber = 11;
+    private global::GrpcNet7.VehicleList vehicleList_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::GrpcNet7.VehicleList VehicleList {
+      get { return vehicleList_; }
+      set {
+        vehicleList_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -251,6 +276,7 @@ namespace GrpcNet7 {
       if (WarrantyType != other.WarrantyType) return false;
       if (UserId != other.UserId) return false;
       if (VehicleId != other.VehicleId) return false;
+      if (!object.Equals(VehicleList, other.VehicleList)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -268,6 +294,7 @@ namespace GrpcNet7 {
       if (WarrantyType.Length != 0) hash ^= WarrantyType.GetHashCode();
       if (UserId != 0) hash ^= UserId.GetHashCode();
       if (VehicleId != 0) hash ^= VehicleId.GetHashCode();
+      if (vehicleList_ != null) hash ^= VehicleList.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -326,6 +353,10 @@ namespace GrpcNet7 {
         output.WriteRawTag(80);
         output.WriteInt32(VehicleId);
       }
+      if (vehicleList_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(VehicleList);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -376,6 +407,10 @@ namespace GrpcNet7 {
         output.WriteRawTag(80);
         output.WriteInt32(VehicleId);
       }
+      if (vehicleList_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(VehicleList);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -415,6 +450,9 @@ namespace GrpcNet7 {
       }
       if (VehicleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(VehicleId);
+      }
+      if (vehicleList_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VehicleList);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -457,6 +495,12 @@ namespace GrpcNet7 {
       }
       if (other.VehicleId != 0) {
         VehicleId = other.VehicleId;
+      }
+      if (other.vehicleList_ != null) {
+        if (vehicleList_ == null) {
+          VehicleList = new global::GrpcNet7.VehicleList();
+        }
+        VehicleList.MergeFrom(other.VehicleList);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -513,6 +557,13 @@ namespace GrpcNet7 {
             VehicleId = input.ReadInt32();
             break;
           }
+          case 90: {
+            if (vehicleList_ == null) {
+              VehicleList = new global::GrpcNet7.VehicleList();
+            }
+            input.ReadMessage(VehicleList);
+            break;
+          }
         }
       }
     #endif
@@ -566,6 +617,13 @@ namespace GrpcNet7 {
           }
           case 80: {
             VehicleId = input.ReadInt32();
+            break;
+          }
+          case 90: {
+            if (vehicleList_ == null) {
+              VehicleList = new global::GrpcNet7.VehicleList();
+            }
+            input.ReadMessage(VehicleList);
             break;
           }
         }

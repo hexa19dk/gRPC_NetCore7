@@ -1,5 +1,6 @@
 ﻿using MySqlConnector;
 using System.Data;
+using System.Data.Common;
 
 namespace GrpcNet7.Data
 {
@@ -12,6 +13,6 @@ namespace GrpcNet7.Data
             _config = config;
         }
 
-        public IDbConnection CreateConnection() => new MySqlConnection(_config.GetConnectionString("connDef"));
+        public IDbConnection Connect() => new MySqlConnection(_config.GetConnectionString("connDef"));
     }
 }

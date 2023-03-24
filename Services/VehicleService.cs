@@ -78,7 +78,6 @@ namespace GrpcNet7.Services
 
         public override async Task<VehicleList> GetVehicleById(VehicleRequestId reqId, ServerCallContext context)
         {
-            //var VeDt = _ctx.Vehicles.Find(reqId.Id);
             VehicleList resp = new VehicleList();
             var cacheDt = _cacheService.GetData<IEnumerable<Vehicle>>("vehicles");
             try
